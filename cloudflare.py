@@ -1,23 +1,23 @@
 import requests
 import json
 
-api_key = "f92de1c5ba4ea75bfe3fe6f5c952cc8c495d2"
+api_key = "API_KEY"
 
-zone_id = "c7571ec09e85a9e59afc601845e8dd98"
+zone_id = "ZONE_ID OF YOUR DOMAIN"
 
-api_endpoint = "https://api.cloudflare.com/client/v4/zones/c7571ec09e85a9e59afc601845e8dd98/dns_records"
+api_endpoint = "https://api.cloudflare.com/client/v4/zones/"API_KEY"/dns_records"
 
 dns_records = {
-    "type": "A",
-    "name": "linkedin",
-    "content": "192.46.215.40",
-    "proxied": False
+    "type": "",
+    "name": "SUBDOMAIN",
+    "content": "",
+    "proxied": False # False/True - If True, It will be proxied like a mask by cloudflare which blocks the identity of that domain
 }
 
 headers = {
     "Content-Type": "application/json",
-    "X-Auth-Email": "lokeshbalaji2021@gmail.com",
-    "X-Auth-Key": "f92de1c5ba4ea75bfe3fe6f5c952cc8c495d2"
+    "X-Auth-Email": "CLOUDFLARE-EMAIL",
+    "X-Auth-Key": "API_KEY"
 }
 
 response = requests.post(api_endpoint, headers=headers, json=dns_records)
